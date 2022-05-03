@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { render } from 'react-dom';
+import GridComponent from "./components/grid.component"; // Optional theme CSS
+import { LicenseManager } from  'ag-grid-enterprise'
+import 'ag-grid-community/dist/styles/ag-grid.css'; // Core grid CSS, always needed
+import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
 
-export default App;
+  const key = "";
+  LicenseManager.setLicenseKey(key);
+
+  const dummyData = [
+    {
+      row_id: 123,
+      col1: 'foo',
+      col2: 'bar',
+      col3: 'baz'
+    },
+    {
+      row_id: 456,
+      col1: 'abc',
+      col2: 'def',
+      col3: 'ghi'
+    },
+    {
+      row_id: 789,
+      col1: 'Dwayne',
+      col2: '"The Rock"',
+      col3: 'Johnson'
+    }
+  ];
+
+  return <GridComponent rowData={dummyData}/>
+};
+
+render(<App />, document.getElementById('root'));
+
+export default App
