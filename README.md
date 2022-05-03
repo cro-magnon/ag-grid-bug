@@ -1,3 +1,13 @@
+# How to use this project:
+
+- Project uses **node v16.13.0** - install via any means
+- **yarn is required** - install via the [installation page](https://classic.yarnpkg.com/lang/en/docs/install)
+- Paste an enterprise ag-grid key into the const in App.js
+- run `yarn install`
+- run `yarn start`
+
+In the grid, paste multiple values in a row and observe behavior.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
